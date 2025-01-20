@@ -1,0 +1,53 @@
+nav {
+  position: fixed;
+  width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+}
+nav li {
+    display: inline;
+}
+
+*{
+  margin:0;
+  padding:0;
+}
+.menu {
+  background-color: #333; 
+}
+.menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: justify;
+}
+.menu ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+.menu ul li:last-child {
+  margin-right: 0;
+}
+.menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px 20px;
+  display: block;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.menu ul li a:hover {
+  transform: translateY(3px); 
+  background-color: #555; 
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.menu .logo{
+  object-fit: none;
+  object-position: right;
+}
