@@ -1,0 +1,71 @@
+/* Estructura del carrusel */
+
+.carrusel {
+  position: relative; /* En HTML: Este es el contenedor principal del carrusel */
+  width: 60%; /* Define el ancho del carrusel como el 80% del contenedor padre */
+  margin: auto; /* Centra el carrusel horizontalmente */
+  overflow: hidden; /* Oculta contenido que sobresalga del contenedor principal */
+  border: 2px solid #ae02dd;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(158, 34, 196, 0.2);
+}
+
+/* Contenedor de diapositivas */
+.carrusel_slides {
+  display: flex; /* En HTML: Este contenedor debe envolver todas las diapositivas */
+  transition: transform 0.5s ease-in-out; /* Aplica una transición suave al deslizarse */
+  width: 30%; /* Asegúrate de que el HTML tenga 3 diapositivas dentro de este contenedor */
+}
+
+/* Cada diapositiva */
+.slide {
+  flex: 1 0 100%; /* En HTML: Cada diapositiva necesita la clase "slide" */
+  padding: 20px; /* Espaciado interno de cada diapositiva */
+  text-align: center; /* Alinea el contenido de texto en el centro */
+}
+
+.slide img{
+  height: auto;
+  width: 100%;
+  display: block;
+}
+
+/* Oculta los radios */
+input[type="radio"] {
+  display: none; /* En HTML: Los inputs tipo radio deben existir pero estarán ocultos */
+}
+
+/* Control de la posición del carrusel según el radio seleccionado */
+#slide1:checked ~ .carrusel_slides {
+  transform: translateX(0%); /* En HTML: Asegúrate de que el input radio tenga id="slide1" */
+}
+
+#slide2:checked ~ .carrusel_slides {
+  transform: translateX(-100%); /* En HTML: Asegúrate de que el input radio tenga id="slide2" */
+}
+
+#slide3:checked ~ .carrusel_slides {
+  transform: translateX(-200%); /* En HTML: Asegúrate de que el input radio tenga id="slide3" */
+}
+
+/* Navegación del carrusel */
+.carrusel-navigation {
+  display: flex; /* En HTML: Este contenedor debe envolver los indicadores de navegación */
+  justify-content: center; /* Centra los indicadores horizontalmente */
+  margin-top: 10px; /* Añade espacio entre el carrusel y los indicadores */
+}
+
+.carrusel-navigation label {
+  width: 15px; /* Tamaño de cada indicador */
+  height: 15px;
+  background: #ff00b3; /* Color de los indicadores inactivos */
+  border-radius: 50%; /* Indicadores con forma circular */
+  margin: 0 5px; /* Espaciado entre los indicadores */
+  cursor: pointer; /* Cambia el cursor al pasar sobre los indicadores */
+  transition: background 0.3s; /* Transición suave para cambiar el color del indicador activo */
+}
+
+/* Cambia el color del indicador activo */
+input[type="radio"]:checked + .carrusel-navigation label {
+  background: #333; /* En HTML: Asegúrate de que los inputs radio estén vinculados con los labels */
+}
