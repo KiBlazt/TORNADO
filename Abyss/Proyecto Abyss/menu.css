@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'VHS Gothic';  /* Nombre de la fuente que usarás */
+  src: url('Fuentes/vhs-gothic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 nav {
   position: fixed;
   width: 100%;
@@ -15,7 +22,7 @@ nav li {
   padding:0;
 }
 .menu {
-  background-color: #333; 
+  background-color: #33333393; 
 }
 .menu ul {
   margin: 0;
@@ -33,14 +40,25 @@ nav li {
 .menu ul li a {
   color: white;
   text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:'VHS Gothic', sans-serif;
   padding: 10px 20px;
   display: block;
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
+
+.menu ul li a {
+  left: 200px;
+  color: white;
+  text-decoration: none;
+  font-family:'VHS Gothic', sans-serif;
+  padding: 10px 20px;
+  display: block;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
 .menu ul li a:hover {
-  transform: translateY(3px); 
-  background-color: #555; 
+  transform: translateY(1px); 
+  background-color: #555555;
 }
 
 html {
@@ -49,5 +67,6 @@ html {
 
 .menu .logo{
   object-fit: none;
-  object-position: right;
+  position: relative;
+  left: 380px;
 }
