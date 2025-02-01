@@ -37,14 +37,6 @@ nav li {
 .menu ul li:last-child {
   margin-right: 0;
 }
-.menu ul li a {
-  color: white;
-  text-decoration: none;
-  font-family:'VHS Gothic', sans-serif;
-  padding: 10px 20px;
-  display: block;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
 
 .menu ul li a {
   left: 200px;
@@ -68,5 +60,5 @@ html {
 .menu .logo{
   object-fit: none;
   position: relative;
-  left: 380px;
+  left: 390px;
 }

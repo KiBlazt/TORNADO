@@ -1,5 +1,3 @@
-/* Reset de márgenes y paddings */
-/* Reset de márgenes y paddings */
 * {
     margin: 0;
     padding: 0;
@@ -20,10 +18,10 @@ body {
 }
 
 .form-container {
-    background-color: rgba(91, 192, 250, 0.733);
-    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.527);
+    padding: 10px;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgb(248, 3, 3);
     width: 320px;
     text-align: center;
 }
@@ -78,3 +76,73 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+@font-face {
+    font-family: 'VHS Gothic';  /* Nombre de la fuente que usarás */
+    src: url('Fuentes/vhs-gothic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  nav {
+    position: fixed;
+    width: 100%;
+    top: 0; /* Asegura que esté en la parte superior */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos si es necesario */
+  }
+  
+  nav ul {
+      list-style-type: none;
+  }
+  nav li {
+      display: inline;
+  }
+  
+  .menu {
+    background-color: #33333393; 
+  }
+  .menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: justify;
+  }
+  .menu ul li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  .menu ul li:last-child {
+    margin-right: 0;
+  }
+  .menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-family:'VHS Gothic', sans-serif;
+    padding: 10px 20px;
+    display: block;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .menu ul li a {
+    left: 200px;
+    color: white;
+    text-decoration: none;
+    font-family:'VHS Gothic', sans-serif;
+    padding: 10px 20px;
+    display: block;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .menu ul li a:hover {
+    transform: translateY(1px); 
+    background-color: #555555;
+  }
+  
+  html {
+      scroll-behavior: smooth;
+  }
+  
+  .menu .logo{
+    object-fit: none;
+    position: relative;
+    left: 630px;
+  }

@@ -1,17 +1,92 @@
-/* Reset de márgenes y padding */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'VHS Gothic';  /* Nombre de la fuente que usarás */
+    src: url('Fuentes/vhs-gothic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  nav {
+    position: fixed;
+    width: 100%;
+    top: 0; /* Asegura que esté en la parte superior */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos si es necesario */
+  }
+  
+  nav ul {
+      list-style-type: none;
+  }
+  nav li {
+      display: inline;
+  }
+  
+  .menu {
+    background-color: #33333393; 
+  }
+  .menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: justify;
+  }
+  .menu ul li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  .menu ul li:last-child {
+    margin-right: 0;
+  }
+  .menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-family:'VHS Gothic', sans-serif;
+    padding: 10px 20px;
+    display: block;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .menu ul li a {
+    left: 200px;
+    color: white;
+    text-decoration: none;
+    font-family:'VHS Gothic', sans-serif;
+    padding: 10px 20px;
+    display: block;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .menu ul li a:hover {
+    transform: translateY(1px); 
+    background-color: #555555;
+  }
+  
+  html {
+      scroll-behavior: smooth;
+  }
+  
+  .menu .logo{
+    object-fit: none;
+    position: relative;
+    left: 620px;
+  }
+  
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-image: url('Imagenes/PlaystationB.jpg');
+    background-size: cover; /* Ajusta la imagen para que cubra toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    padding-top: 60px; /* Ajusta según la altura de tu menú */
 }
 
 .login-container {
@@ -57,6 +132,14 @@ button:hover {
     background-color: #45a049;
 }
 
-pa {
+div form p{
+    padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+div form a {
+    font-family: Arial, Helvetica, sans-serif;
+    color: none;
+    text-align: center;
 }
