@@ -58,11 +58,6 @@ body {
   text-decoration: underline;
 }
 
-.content {
-  margin-top: 70px; /* Ajusta el margen superior si es necesario */
-  padding: 20px;
-}
-
 .small-right {
   width: 30px;
   height: auto;
