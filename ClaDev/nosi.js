@@ -15,7 +15,3 @@ document.getElementById("guardarBTN").onclick = function () {
 };
 
 // Asignar evento al botón "Ir a otra página"
-document.getElementById("miBoton").addEventListener("click", function () {
-    // Redirigir a otro archivo HTML
-    window.location.href = "si.html";
-});
