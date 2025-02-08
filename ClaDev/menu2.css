@@ -1,4 +1,47 @@
-.fono_arriba{
-    width: 10%;
-    height: 10%;
+body{
+    background-image: url(imagenes/fondo_cafe_2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-attachment: fixed;
+}
+
+label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+input{
+    border-radius: 5px;
+    outline: none;
+}
+
+.derecha{
+    margin-top: 10%;
+    margin-left: 55%; 
+}
+
+.texto{
+    text-align: center;
+}
+
+.fondo_negro{
+    background-color: rgba(0, 0, 0, 0.3); 
+    z-index: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-attachment: fixed;
+}
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
 }
