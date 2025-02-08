@@ -1,0 +1,94 @@
+@font-face {
+    font-family: 'VHS Gothic';  /* Nombre de la fuente que usarás */
+    src: url('Fuentes/vhs-gothic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+body{
+    background-image: url('Imagenes/blocks.jpg');
+    background-size: cover;
+    }
+
+  nav {
+    position: fixed;
+    width: 100%;
+  }
+  
+  nav ul {
+      list-style-type: none;
+  }
+  nav li {
+      display: inline;
+  }
+  
+  *{
+    margin:0;
+    padding:0;
+  }
+  .menu {
+    background-color: #33333393; 
+  }
+  .menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: justify;
+  }
+  .menu ul li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  .menu ul li:last-child {
+    margin-right: 0;
+  }
+  
+  .menu ul li a {
+    left: 200px;
+    color: white;
+    text-decoration: none;
+    font-family:'VHS Gothic', sans-serif;
+    padding: 10px 20px;
+    display: block;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .menu ul li a:hover {
+    transform: translateY(1px); 
+    background-color: #555555;
+  }
+  
+  html {
+      scroll-behavior: smooth;
+  }
+  
+  .menu .logo{
+    object-fit: none;
+    position: relative;
+    left: 520px;
+  }
+ 
+/* Estilos para el submenú */
+nav ul li ul.submenu {
+    display: none;
+    font-family: Georgia;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+  }
+  
+  nav ul li:hover ul.submenu {
+    display: block;
+  }
+  
+  nav ul li ul.submenu li {
+    display: block;
+  }  
+
+  nav ul li ul.submenu li a {
+    padding: 10px 20px; /* Ajusta el espaciado en cada elemento del submenú */
+  }
+  nav ul li ul.submenu li a:hover {
+    background-color: #444; /* Cambio de color cuando se pasa el mouse */
+  }
