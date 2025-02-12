@@ -1,29 +1,38 @@
-// Selecciona todos los botones con la clase "interactive-button"
-const buttons = document.querySelectorAll('.interactive-button');
+document.addEventListener("DOMContentLoaded", () => {
+    const carousel = document.querySelector(".carousel-inner");
+    const items = document.querySelectorAll(".carousel-item");
+    const totalItems = items.length;
+    
+    let angle = 0;
+    const angleStep = 360 / totalItems;
+    let autoRotate;
 
-// Recorre cada botón y asigna un evento de clic
-buttons.forEach((button) => {
-  button.addEventListener('click', () => {
-    // Quita la clase "active" de todos los botones
-    buttons.forEach((btn) => btn.classList.remove('active'));
+    function rotateCarousel(direction = 1) {
+        angle -= angleStep * direction;
+        carousel.style.transform = `rotateY(${angle}deg)`;
+    }
 
-    // Agrega la clase "active" solo al botón clicado
-    button.classList.add('active');
-  });
-});
+    function startAutoRotate() {
+        autoRotate = setInterval(() => rotateCarousel(1), 3000);
+    }
 
+    function stopAutoRotate() {
+        clearInterval(autoRotate);
+    }
 
-// Recorre cada imagen para añadir eventos de interacción
-images.forEach(image => {
-  // Al pasar el mouse sobre la imagen, se muestra la descripción
-  image.addEventListener("mouseenter", () => {
-      const description = image.nextElementSibling; // Selecciona la descripción asociada
-      description.style.opacity = "1"; // Hace visible la descripción
-  });
+    // Iniciar rotación automática
+    startAutoRotate();
 
-  // Al quitar el mouse de la imagen, se oculta la descripción
-  image.addEventListener("mouseleave", () => {
-      const description = image.nextElementSibling;
-      description.style.opacity = "0"; // Oculta la descripción
-  });
+    // Botones de navegación
+    document.getElementById("prev").addEventListener("click", () => {
+        stopAutoRotate();
+        rotateCarousel(-1);
+        startAutoRotate();
+    });
+
+    document.getElementById("next").addEventListener("click", () => {
+        stopAutoRotate();
+        rotateCarousel(1);
+        startAutoRotate();
+    });
 });
