@@ -1,0 +1,110 @@
+/* Estilos generales */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #111;
+    margin: 0;
+}
+
+/* Estilos del carrusel */
+.carousel {
+    position: relative;
+    width: 350px;
+    height: 500px;
+    perspective: 1300px; /* Ajustamos la profundidad 3D */
+}
+
+.carousel-inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 1s ease-in-out;
+}
+
+/* Estilos de cada imagen en el carrusel */
+.carousel-item {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    backface-visibility: hidden;
+}
+
+/* Posicionamiento en círculo */
+.carousel-item:nth-child(1) { transform: rotateY(0deg) translateZ(250px); }
+.carousel-item:nth-child(2) { transform: rotateY(72deg) translateZ(250px); }
+.carousel-item:nth-child(3) { transform: rotateY(144deg) translateZ(250px); }
+.carousel-item:nth-child(4) { transform: rotateY(216deg) translateZ(250px); }
+.carousel-item:nth-child(5) { transform: rotateY(288deg) translateZ(250px); }
+
+/* Estilos de cada imagen en el carrusel */
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;  /* Añadimos una transición suave */
+}
+
+/* Efecto al pasar el mouse */
+.carousel-item:hover img {
+    transform: scale(1.1);  /* Aumentamos el tamaño de la imagen al 110% */
+}
+
+/* Controles de navegación */
+.controls {
+    position: absolute;
+    bottom:130px;  /* Mueve los botones hacia arriba */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+}
+
+/* Estilo de los botones */
+.controls button {
+    background: rgba(255, 255, 255, 0.3);  /* Fondo más transparente */
+    border: none;
+    padding: 2px 2px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    opacity: 0.8;  /* Opacidad general de los botones */
+}
+
+/* Hover de los botones */
+.controls button:hover {
+    background: rgba(255, 255, 255, 0.5);  /* Fondo más visible al pasar el mouse */
+    opacity: 1;  /* Opacidad completa al hacer hover */
+}
+
+/* Estilo del botón para redirigir */
+.redirect-button {
+    text-decoration: none;  /* Elimina el subrayado del enlace */
+    position: absolute;
+    bottom: 20px;  /* Coloca el botón cerca de la parte inferior */
+    left: 50%;
+    transform: translateX(-50%);  /* Centra el botón horizontalmente */
+}
+
+.redirect-button button {
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.redirect-button button:hover {
+    background: rgba(255, 255, 255, 1);  /* Fondo más visible al hacer hover */
+    transform: scale(1.1);  /* Efecto de agrandamiento */
+}

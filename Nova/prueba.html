@@ -1,37 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carrusel de Imágenes</title>
-  <link rel="stylesheet" href="preueba.css"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrusel 3D</title>
+    <link rel="stylesheet" href="prueba.css">
 </head>
 <body>
-  <div class="carrusel">
-    <!-- Inputs tipo radio para controlar el carrusel -->
-    <input type="radio" id="slide1" name="carrusel" checked>
-    <input type="radio" id="slide2" name="carrusel">
-    <input type="radio" id="slide3" name="carrusel">
-
-    <!-- Contenedor de las diapositivas -->
-    <div class="carrusel_slides">
-      <div class="slide">
-        <img src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781608874255/halo-9781608874255_hr.jpg" alt="Primera imagen">
-      </div>
-      <div class="slide">
-        <img src="https://www.videogamer.com/wp-content/uploads/GTA6KeyArt.jpg" alt="Segunda imagen">
-      </div>
-      <div class="slide">
-        <img src="https://th.bing.com/th/id/R.3019bb5189bda92f21249f6e26d192a6?rik=780UhQ%2fJtwtQOg&pid=ImgRaw&r=0" alt="Tercera imagen">
-      </div>
+    <div class="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item">
+                <img src="imagenes/halo_infinite_keyart_primary_vertical-748a0db8be6c497d86f83ad76265060f.png" alt="Imagen 1">
+            </div>
+            <div class="carousel-item">
+                <img src="imagenes/co3ofx.jpg" alt="Imagen 2">
+            </div>
+            <div class="carousel-item">
+                <img src="imagenes/call-of-duty-black-ops-2-5099027803882.jpg" alt="Imagen 3">
+            </div>
+            <div class="carousel-item">
+                <img src="imagenes/OIP (2).jpg" alt="Imagen 4">
+            </div>
+            <div class="carousel-item">
+                <img src="imagenes/minecraft_cover.jpg" alt="Imagen 5">
+            </div>
+        </div>
     </div>
 
+    <!-- Botones de navegación -->
+    <div class="controls">
+        <button id="prev">◀</button>
+        <button id="next">▶</button>
+    </div>
     
-    <div class="carrusel-navigation">
-      <label for="slide1"></label>
-      <label for="slide2"></label>
-      <label for="slide3"></label>
-    </div>
-  </div>
+<!-- Carrusel 3D (ya lo tienes) -->
+
+ <!-- Botón para redirigir a prueba2.html -->
+ <a href="prueba2.html" class="redirect-button">
+    <button>Ir a otra página</button>
+</a>
+
+    <script src="prueba.js"></script>
 </body>
 </html>
