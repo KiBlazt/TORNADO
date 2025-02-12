@@ -186,7 +186,7 @@ input[type="radio"]:checked + .carrusel-navigation label {
   top: 20px;
   right: -170px; /* Ajusta este valor según sea necesario */
   padding: 10px;
-  background-color: rgba(53, 50, 50, 0.445);
+  background-color: rgba(44, 42, 42, 0.445);
   color: white;
   border-radius: 10px;
 }
@@ -200,14 +200,27 @@ input[type="radio"]:checked + .carrusel-navigation label {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  background-color: rgba(53, 50,50, 0.7);
+  padding: 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .games-list ul li img {
   width: 50px; /* Ajusta el tamaño de la imagen según sea necesario */
   height: auto;
   margin-right: 10px; /* Espacio entre la imagen y el texto */
+  transition: transform 0.3s ease;
 }
 
 .games-list ul li span {
   font-size: 16px; /* Ajusta el tamaño de la fuente según sea necesario */
+}
+
+.games-list ul li img:hover {
+  transform: scale(1.1);
+}
+
+.games-list ul li:hover {
+  background-color: rgba(53,50,50, 0.9);
 }
