@@ -1,0 +1,56 @@
+/* Estilo global para el cuerpo de la página */
+body {
+    font-family: Arial, sans-serif; /* Establece la tipografía por defecto */
+    margin: 0; /* Elimina márgenes predeterminados */
+    padding: 0; /* Elimina el relleno predeterminado */
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: #3333334d; /* Establece el color de fondo del encabezado */
+    color: white; /* Cambia el color del texto a blanco */
+    display: flex; /* Utiliza el modelo de diseño flexbox para organizar los elementos */
+    justify-content: center; /* Distribuye el espacio entre los elementos */
+    align-items: center; /* Alinea los elementos verticalmente al centro */
+    padding: 10px 20px; /* Añade espacio dentro del encabezado (10px arriba/abajo y 20px a los lados) */
+}
+
+/* Estilos para el logo */
+.logo img {
+    height: 55px; /* Define una altura fija para la imagen del logo */
+    position: relative;
+    right: 290px;
+}
+
+/* Estilos para la barra de navegación */
+nav ul {
+    list-style-type: none; /* Elimina los puntos de la lista */
+    margin: 0; /* Elimina márgenes predeterminados */
+    padding: 0; /* Elimina relleno */
+    display: flex; /* Usa flexbox para alinear los elementos horizontalmente */
+    width: 100%; /* Asegura que el <ul> ocupe todo el ancho del contenedor */
+   
+}
+
+
+/* Estilo de cada enlace en la barra de navegación */
+nav ul li {
+    margin-right: 20px; /* Añade un espacio a la derecha de cada elemento de la lista */
+}
+
+/* Estilo para los enlaces en la navegación */
+nav ul li a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: white; /* Define el color del texto de los enlaces como blanco */
+    font-size: 18px; /* Ajusta el tamaño de la fuente */
+}
+
+/* Efecto al pasar el mouse por encima de los enlaces */
+nav ul li a:hover {
+    color: #ff9900; /* Cambia el color del enlace a un tono naranja cuando el mouse pasa por encima */
+}
+
+.derecha{
+    margin-right: 100%;
+}
+ 
