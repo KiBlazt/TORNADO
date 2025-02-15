@@ -1,71 +1,164 @@
-/* Estructura del carrusel */
-
+/* Contenedor principal del carrusel */
 .carrusel {
-  position: relative; /* En HTML: Este es el contenedor principal del carrusel */
-  width: 60%; /* Define el ancho del carrusel como el 80% del contenedor padre */
-  margin: auto; /* Centra el carrusel horizontalmente */
-  overflow: hidden; /* Oculta contenido que sobresalga del contenedor principal */
+  position: relative;
+  display: flex;
+  width: 25%; /* el tamaño del carrucel */
+  margin: auto;
+  overflow: hidden; /* Oculta las imágenes fuera del área visible */
   border: 2px solid #ae02dd;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(158, 34, 196, 0.2);
 }
 
-/* Contenedor de diapositivas */
+/* Contenedor de las diapositivas */
 .carrusel_slides {
-  display: flex; /* En HTML: Este contenedor debe envolver todas las diapositivas */
-  transition: transform 0.5s ease-in-out; /* Aplica una transición suave al deslizarse */
-  width: 30%; /* Asegúrate de que el HTML tenga 3 diapositivas dentro de este contenedor */
+  display: flex;
+  width: 300%; /* Esto se mantiene porque son 3 diapositivas */
+  transition: transform 0.5s ease-in-out;
 }
 
-/* Cada diapositiva */
+/* Cada diapositiva ocupa solo el 100% del carrusel */
 .slide {
-  flex: 1 0 100%; /* En HTML: Cada diapositiva necesita la clase "slide" */
-  padding: 20px; /* Espaciado interno de cada diapositiva */
-  text-align: center; /* Alinea el contenido de texto en el centro */
+  flex: 0 0 100%; /* Una imagen a la vez */
+  position: relative;
 }
 
-.slide img{
-  height: auto;
-  width: 100%;
-  display: block;
+/* Imágenes del carrusel (escaladas para ajustarse al 30%) */
+.game-image {
+  width: 100%; /* Ajusta el porcentaje para que las imágenes se escalen más pequeñas */
+  height: auto; /* Mantiene la proporción de la imagen */
+  object-fit: contain; /* Escala la imagen para que se ajuste al contenedor sin deformarse */
 }
 
-/* Oculta los radios */
+/* Oculta los inputs tipo radio */
 input[type="radio"] {
-  display: none; /* En HTML: Los inputs tipo radio deben existir pero estarán ocultos */
+  display: none;
 }
 
-/* Control de la posición del carrusel según el radio seleccionado */
+/* Ajusta el movimiento del carrusel según el radio seleccionado */
 #slide1:checked ~ .carrusel_slides {
-  transform: translateX(0%); /* En HTML: Asegúrate de que el input radio tenga id="slide1" */
+  transform: translateX(0%);
 }
 
 #slide2:checked ~ .carrusel_slides {
-  transform: translateX(-100%); /* En HTML: Asegúrate de que el input radio tenga id="slide2" */
+  transform: translateX(-100%);
 }
 
 #slide3:checked ~ .carrusel_slides {
-  transform: translateX(-200%); /* En HTML: Asegúrate de que el input radio tenga id="slide3" */
+  transform: translateX(-200%);
 }
 
-/* Navegación del carrusel */
+/* Navegación del carrusel (puntos de selección) */
 .carrusel-navigation {
-  display: flex; /* En HTML: Este contenedor debe envolver los indicadores de navegación */
-  justify-content: center; /* Centra los indicadores horizontalmente */
-  margin-top: 10px; /* Añade espacio entre el carrusel y los indicadores */
+  display: flex;
+  justify-content: center;
+  position: absolute; /* Fijamos la posición de los botones */
+  bottom: 10px; /* Los botones estarán por encima de las imágenes */
+  left: 50%;
+  transform: translateX(-50%); /* Centra los botones horizontalmente */
+  z-index: 1; /* Los botones estarán por encima de las imágenes */
 }
 
 .carrusel-navigation label {
-  width: 15px; /* Tamaño de cada indicador */
+  width: 15px;
   height: 15px;
-  background: #ff00b3; /* Color de los indicadores inactivos */
-  border-radius: 50%; /* Indicadores con forma circular */
-  margin: 0 5px; /* Espaciado entre los indicadores */
-  cursor: pointer; /* Cambia el cursor al pasar sobre los indicadores */
-  transition: background 0.3s; /* Transición suave para cambiar el color del indicador activo */
+  background: #ff00b3;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
 /* Cambia el color del indicador activo */
-input[type="radio"]:checked + .carrusel-navigation label {
-  background: #333; /* En HTML: Asegúrate de que los inputs radio estén vinculados con los labels */
+input[type="radio"]:checked + label {
+  background: #333;
 }
+
+
+/* --- CUADRO GRIS TRANSPARENTE CON LA DESCRIPCIÓN --- */
+.description {
+  position: absolute;
+  bottom: 0; /* Aparece en la parte inferior de la imagen */
+  left: 0;
+  width: 95%; /* El cuadro cubre todo el ancho de la imagen */
+  height: 97%; /* Asegura que el cuadro cubra toda la altura de la imagen */
+  background: rgba(0, 0, 0, 0.7); /* Fondo gris oscuro con transparencia */
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+  opacity: 0; /* Oculto por defecto */
+  transition: opacity 0.3s ease-in-out;
+  z-index: 2; /* Asegura que esté encima de los botones */
+}
+
+/* Muestra la descripción al pasar el mouse sobre la imagen */
+.slide:hover .description {
+  opacity: 1; /* Aparece con una transición suave */
+}
+
+
+
+ /* ---------------------------------------------------------------------------------------------------- */
+
+
+/* Estilo base de los botones */
+.interactive-button {
+  background-color: hwb(304 3% 4%); /* Color */
+  color: white;             /* Texto blanco */
+  border: none;             /* Sin borde */
+  
+  padding: 10px 20px;       /* Espaciado interno */
+  font-size: 15px;          /* Tamaño del texto */
+  font-weight: bold;        /* Texto en negrita */
+  border-radius: 40px;       /* Bordes redondeados */
+  cursor: pointer;          /* Cambia el cursor al pasar sobre el botón */
+  transition: background-color 0.3s ease; /* Suaviza la transición de color */
+}
+
+/* Cambio de color al pasar el mouse */
+.interactive-button:hover {
+  background-color: #8f0074; /* Color */
+}
+
+/* Cambio de color al hacer clic */
+.interactive-button.active {
+  background-color: #900075; /* Color  */
+}
+
+/* Efecto sombra al pasar el mouse */
+.interactive-button:hover {
+  background-color: #8f0074;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+/* Efecto de animación al hacer clic */
+.interactive-button:active {
+  transform: scale(0.95); /* Reduce el tamaño un poco */
+}
+
+
+/* Estilo para el texto que aparece al lado de la imagen */
+.slide-text {
+  display: flex; /* Usamos flexbox para alinear el texto */
+  flex-direction: column; /* Coloca el texto en una columna */
+  justify-content: center; /* Centra el texto verticalmente */
+  padding: 20px; /* Espacio alrededor del texto */
+  width: 35%; /* El texto ocupa el 35% del ancho de la diapositiva */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente para mejorar la visibilidad del texto */
+  color: white; /* Color blanco para el texto */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 18px; /* Tamaño de la fuente */
+  line-height: 1.5; /* Espaciado entre las líneas del texto */
+  position: relative; /* Necesario para usar top, bottom, etc */
+  top: 50%; /* Posiciona el texto a la mitad de la diapositiva */
+  transform: translateY(-50%); /* Ajusta para que el texto se centre verticalmente */
+}
+
+/* Media Query para pantallas más grandes */
+@media (min-width: 768px) {
+  .slide-text {
+    font-size: 22px; /* Aumenta el tamaño del texto en pantallas más grandes */
+  }
+}
+
