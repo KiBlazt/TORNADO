@@ -62,3 +62,27 @@ html {
   position: relative;
   left: 390px;
 }
+
+nav ul li ul.submenu {
+  display: none;
+  font-family: Georgia;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #333;
+}
+
+nav ul li:hover ul.submenu {
+  display: block;
+}
+
+nav ul li ul.submenu li {
+  display: block;
+}  
+
+nav ul li ul.submenu li a {
+  padding: 10px 20px; /* Ajusta el espaciado en cada elemento del submenú */
+}
+nav ul li ul.submenu li a:hover {
+  background-color: #444; /* Cambio de color cuando se pasa el mouse */
+}
