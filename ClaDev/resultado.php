@@ -1,35 +1,39 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+// Asegúrate de que la ruta sea correcta
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Recuperar datos del formulario
-    $nombre = htmlspecialchars($_POST['nombre']);
-    $apellido = htmlspecialchars($_POST['apellido']);
-    $telefono = htmlspecialchars($_POST['telefono']);
-    $corre = htmlspecialchars($_POST['correo']);
-    $pokemon = htmlspecialchars($_POST['pokemon']);
+    $mail = new PHPMailer(true);
 
-    // Destinatario del correo
-    $destinatario = "davidpajuegos@gmail.com"; // Cambia esto por tu correo
+    try {
+        // Configuración del servidor SMTP
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com'; // Servidor SMTP de Gmail
+        $mail->SMTPAuth = true;
+        $mail->Username = 'davidpaltito@gmail.com'; // Tu correo de Gmail
+        $mail->Password = 'Dinosaurio'; // Tu contraseña o contraseña de aplicación
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Usar TLS
+        $mail->Port = 587; // Puerto para TLS
 
-    // Asunto del correo
-    $asunto = "Nueva respuesta del cuestionario";
+        // Remitente y destinatario
+        $mail->setFrom($_POST['correo'], $_POST['nombre']); // Correo y nombre del remitente
+        $mail->addAddress('davidpajuegos@gmail.com'); // Correo del destinatario
 
-    // Cuerpo del correo
-    $mensaje = "Nombre: $nombre\n";
-    $mensaje .= "apellido: $apellido\n";
-    $mensaje .= "telefono:\n$telefono\n";
-    $mensaje .= "correo:\n$correo\n";
-    $mensaje .= "pokemon:\n$pokemon\n";
+        // Contenido del correo
+        $mail->isHTML(false); // Usar texto plano
+        $mail->Subject = 'Nueva respuesta del cuestionario'; // Asunto del correo
+        $mail->Body = "Nombre: {$_POST['nombre']}\nApellido: {$_POST['apellido']}\nTeléfono: {$_POST['telefono']}\nCorreo: {$_POST['correo']}\nPokemon favorito: {$_POST['pokemon']}";
 
-    // Cabeceras del correo
-    $cabeceras = "From: $email" . "\r\n" .
-                 "Reply-To: $email" . "\r\n" .
-                 "X-Mailer: PHP/" . phpversion();
-
-    // Enviar el correo
-    if (mail($destinatario, $asunto, $mensaje, $cabeceras)) {
+        // Enviar el correo
+        $mail->send();
         echo "¡Gracias! Tu respuesta ha sido enviada.";
-    } else {
-        echo "Hubo un error al enviar tu respuesta. Inténtalo de nuevo.";
+    } catch (Exception $e) {
+        echo "Hubo un error al enviar tu respuesta. Inténtalo de nuevo. Error: {$mail->ErrorInfo}";
     }
 } else {
     echo "Acceso no autorizado.";
