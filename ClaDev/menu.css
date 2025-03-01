@@ -1,4 +1,30 @@
 .carrusel{
     position: relative;
     max-width: 800px;
+    margin: 50 auto;
+    overflow: hidden;
+}
+
+.slide{
+    display: flex;
+    transition:transform 1.0s ease;
+}
+
+.slide{
+    min-width: 100%;
+    transition: opacity 1s ease ease-in-out;
+}
+
+.slide img{
+    width: 100%;
+    height:auto;
+}
+
+.prev, .next{
+position:absolute;
+top: 50%;
+font-size:24px;
+color: black;
+background-color: rgba(0, 0, 0, 0.5)
+
 }
