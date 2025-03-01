@@ -6,9 +6,31 @@
     
     <title>Document</title>
 </head>
-<body>
-    <div class=".fondo_arriba">
-        <img src="imagenes/cafe_fondo.jpg" alt="fondo_arriba">
+<body class="fondo">
+    <form method="POST" action="resultado.php">
+    <div class="fondo_negro">
+        <div class="derecha">
+          <h1 class="texto"> Registro de datos</h1><br>
+          <h2 class="texto"> favor de hacer el registro para hacer el registro </h2><br>
+
+          <label for="nombre"> nombres: </label>
+          <input type="text" id="nombre" name="nombre" required><br>
+
+          <label for="apellido"> apellidos: </label>
+          <input type="text" id="apellido" name="apellido" required><br>
+
+          <label for="telefono"> telefono: </label>
+          <input type="tel" id="telefono" name="telefono" required><br>
+
+          <label for="correo"> correo: </label>
+          <input type="email" id="correo" name="correo" required><br>
+
+          <label for="pokemon"> pokemon fav (es muy importante):</label>
+          <input type="text" id="pokemon" name="pokemon" required><br>
+
+          <br> <input type="submit" value="Enviar">
+        </div>
     </div>
+    </form>
 </body>
 </html>
